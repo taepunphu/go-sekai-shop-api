@@ -1,0 +1,49 @@
+version: '3.8'
+
+name: "sekai-shop-db"
+
+services:
+  auth-db:
+    image: mongo
+    container_name: auth-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - "27017:27017"
+
+  item-db:
+    image: mongo
+    container_name: item-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - "27018:27017"
+
+  player-db:
+    image: mongo
+    container_name: player-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - "27019:27017"
+
+  inventory-db:
+    image: mongo
+    container_name: inventory-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - "27020:27017"
+      
+  payment-db:
+    image: mongo
+    container_name: payment-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - "27021:27017"

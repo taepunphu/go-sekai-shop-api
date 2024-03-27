@@ -7,6 +7,7 @@ import (
 
 	"github.com/taepunphu/go-sekai-shop-api/config"
 	"github.com/taepunphu/go-sekai-shop-api/pkg/database"
+	"github.com/taepunphu/go-sekai-shop-api/server"
 )
 
 func main() {
@@ -23,4 +24,6 @@ func main() {
 	db := database.DbConn(ctx, &cfg)
 	defer db.Disconnect(ctx)
 	log.Println(db)
+
+	server.Start(ctx, &cfg, db)
 }

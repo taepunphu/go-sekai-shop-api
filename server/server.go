@@ -82,10 +82,15 @@ func Start(pctx context.Context, cfg *config.Config, db *mongo.Client) {
 	// custom middleware
 	switch s.cfg.App.Name {
 	case "auth":
+		s.authService()
 	case "player":
+		s.playerService()
 	case "item":
+		s.inventoryService()
 	case "inventory":
+		s.inventoryService()
 	case "payment":
+		s.paymentService()
 	}
 
 	// Graceful shutdown
